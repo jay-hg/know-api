@@ -6,6 +6,7 @@ import com.example.demo.mapper.UserMapper;
 import com.example.demo.model.entity.Article;
 import com.example.demo.model.entity.User;
 import com.example.demo.model.vo.ArticleVo;
+import com.example.demo.model.vo.BulkVoteVo;
 import com.example.demo.service.ArticleService;
 import com.example.demo.utils.DataTimeUtil;
 import org.springframework.stereotype.Service;
@@ -64,6 +65,13 @@ public class ArticleServiceImpl implements ArticleService {
         user.setPassword("");
         user.setPhone("");
         return new ArticleVo(article, user);
+    }
+
+    @Override
+    public void bulkVote(String id, BulkVoteVo bulkVoteVo) {
+        Article article = articleMapper.selectById(id);
+        article.setAgreeCount(article.getAgreeCount() + bulkVoteVo.getNums());
+        articleMapper.updateById(article);
     }
 
     private List<ArticleVo> assembly(QueryWrapper<Article> wrapper) {

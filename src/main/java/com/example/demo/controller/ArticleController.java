@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.constant.ArticleType;
 import com.example.demo.model.entity.Article;
 import com.example.demo.model.vo.ArticleVo;
+import com.example.demo.model.vo.BulkVoteVo;
 import com.example.demo.service.ArticleService;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +25,10 @@ public class ArticleController {
     @GetMapping("/agree/{id}")
     public void agree(@PathVariable String id) {
         articleService.agree(id);
+    }
+    @PostMapping("/bulk-vote/{id}")
+    public void bulkVote(@PathVariable String id, @RequestBody BulkVoteVo bulkVoteVo) {
+        articleService.bulkVote(id, bulkVoteVo);
     }
 
     @GetMapping("/search/{value}")

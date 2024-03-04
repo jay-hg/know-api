@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.entity.Article;
 import com.example.demo.model.vo.ArticleVo;
+import com.example.demo.model.vo.BulkVoteVo;
 
 import java.util.List;
 
@@ -17,4 +18,5 @@ public interface ArticleService {
 
     ArticleVo findById(String id);
 
+    void bulkVote(String id, BulkVoteVo bulkVoteVo);
 }
