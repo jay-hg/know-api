@@ -7,6 +7,7 @@ import com.example.demo.model.entity.Article;
 import com.example.demo.model.entity.User;
 import com.example.demo.model.vo.ArticleVo;
 import com.example.demo.model.vo.BulkVoteVo;
+import com.example.demo.model.vo.UserRankVo;
 import com.example.demo.service.ArticleService;
 import com.example.demo.utils.DataTimeUtil;
 import org.springframework.stereotype.Service;
@@ -72,6 +73,11 @@ public class ArticleServiceImpl implements ArticleService {
         Article article = articleMapper.selectById(id);
         article.setAgreeCount(article.getAgreeCount() + bulkVoteVo.getTotalVoteNum());
         articleMapper.updateById(article);
+    }
+
+    @Override
+    public List<UserRankVo> listTopArticles() {
+        return articleMapper.listTopArticles();
     }
 
     private List<ArticleVo> assembly(QueryWrapper<Article> wrapper) {
