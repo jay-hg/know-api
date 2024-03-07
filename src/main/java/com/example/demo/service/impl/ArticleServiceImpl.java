@@ -70,7 +70,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public void bulkVote(String id, BulkVoteVo bulkVoteVo) {
         Article article = articleMapper.selectById(id);
-        article.setAgreeCount(article.getAgreeCount() + bulkVoteVo.getNums());
+        article.setAgreeCount(article.getAgreeCount() + bulkVoteVo.getTotalVoteNum());
         articleMapper.updateById(article);
     }
 
