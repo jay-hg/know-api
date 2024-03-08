@@ -1,5 +1,7 @@
 server:
   port: 7080
+  servlet:
+    context-path: /api
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/global?currentSchema=know&autoReconnect=true&serverTimezone=UTC&characterEncoding=utf-8&allowMultiQueries=true&stringtype=unspecified
@@ -18,3 +20,9 @@ mybatis-plus:
 #自定义配置文件
 #上传视频本地保存地址
 videoSavePath: /Users/soanr/Desktop/videos
+
+wx:
+  mp:
+    appId: wxe05bcbd16155d028
+    secret: c6304e23275b2d8ef4058f6f465d5f7c
+    token: erwerwerew3243242

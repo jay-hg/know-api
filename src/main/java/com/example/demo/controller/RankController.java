@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/rank")
+@RequestMapping("/rank")
 public class RankController {
 
     @Autowired

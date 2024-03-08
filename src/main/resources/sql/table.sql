@@ -47,3 +47,8 @@ CREATE TABLE t_video (
     create_at varchar(50) NOT NULL,
     PRIMARY KEY (id)
 );
+
+ALTER TABLE know.t_user ALTER COLUMN avatar TYPE varchar(250) USING avatar::varchar;
+ALTER TABLE know.t_user ALTER COLUMN phone DROP NOT NULL;
+ALTER TABLE know.t_user ALTER COLUMN password DROP NOT NULL;
+ALTER TABLE know.t_user ALTER COLUMN school DROP NOT NULL;

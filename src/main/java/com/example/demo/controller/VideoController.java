@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/video")
+@RequestMapping("/video")
 public class VideoController {
 
     @Resource

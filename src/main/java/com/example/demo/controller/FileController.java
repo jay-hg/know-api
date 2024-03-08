@@ -13,7 +13,7 @@ import java.io.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/file")
+@RequestMapping("/file")
 public class FileController {
 
     @Resource
